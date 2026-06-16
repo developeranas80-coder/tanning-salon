@@ -195,7 +195,7 @@ export default function BedsPage() {
                 }`}
               >
                 {/* Widescreen Edge-Bleeding Image with Gradient Mask */}
-                <div className={`w-full lg:absolute lg:top-0 lg:bottom-0 lg:w-[48vw] z-0 overflow-hidden ${
+                <div className={`relative w-full lg:absolute lg:top-0 lg:bottom-0 lg:w-[48vw] z-0 overflow-hidden ${
                   idx % 2 === 0 
                     ? "lg:left-0 bed-mask-left" 
                     : "lg:right-0 bed-mask-right"
