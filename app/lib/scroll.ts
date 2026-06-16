@@ -14,14 +14,16 @@ export function initLenisScroll() {
   if (lenis) return lenis;
 
   lenis = new Lenis({
-    duration: 1.1,
+    duration: 2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: "vertical",
     gestureOrientation: "vertical",
     smoothWheel: true,
-    wheelMultiplier: 1,
-    touchMultiplier: 1.5,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 1.2,
     infinite: false,
+    syncTouch: true,
+    syncTouchLerp: 0.08,
   });
 
   lenis.on("scroll", ScrollTrigger.update);

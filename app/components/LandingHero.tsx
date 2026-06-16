@@ -307,7 +307,7 @@ export default function LandingHero({ active, heroRef }: LandingHeroProps) {
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
       id="home"
-      className="landing-hero relative flex min-h-[100dvh] flex-col overflow-visible pt-[calc(5.25rem+10px)]"
+      className="landing-hero relative flex min-h-[100svh] flex-col overflow-visible pt-[calc(5.25rem+10px)]"
     >
       {/* Local Shifting Gradient Background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0" aria-hidden="true">

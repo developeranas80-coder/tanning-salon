@@ -67,7 +67,7 @@ export default function EnterScreen({ onEnter }: EnterScreenProps) {
   return (
     <div
       ref={screenRef}
-      className="enter-screen fixed inset-0 h-[100dvh] w-full z-[100] flex items-center justify-center overflow-hidden"
+      className="enter-screen fixed inset-0 h-[100svh] w-full z-[100] flex items-center justify-center overflow-hidden"
     >
       <div className="enter-bg pointer-events-none absolute inset-0" aria-hidden />
       <div className="enter-bg-shimmer pointer-events-none absolute inset-0" aria-hidden />
