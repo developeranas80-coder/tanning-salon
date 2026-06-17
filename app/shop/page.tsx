@@ -9,6 +9,7 @@ import AboutBackground from "../components/AboutBackground";
 import Link from "next/link";
 import TestimonialSection from "../components/TestimonialSection";
 import InnerPageCta from "../components/InnerPageCta";
+import PerfectTanSection from "../components/PerfectTanSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -225,8 +226,11 @@ export default function ShopPage() {
       <div ref={contentRef} className="relative w-full overflow-hidden">
         <AboutBackground reduced />
 
+        {/* Perfect Tan Product Guide Intro Section */}
+        <PerfectTanSection />
+
         {/* ─── Product Catalog Grid ─── */}
-        <section className="about-page-section relative overflow-hidden py-20">
+        <section id="product-catalog" className="about-page-section relative overflow-hidden py-20">
           <div className="about-section-glow about-section-glow-right pointer-events-none absolute" aria-hidden />
           <div className="grain-overlay pointer-events-none absolute inset-0 z-[1]" aria-hidden />
 
