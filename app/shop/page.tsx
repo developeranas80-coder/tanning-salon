@@ -255,48 +255,52 @@ export default function ShopPage() {
 
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 lg:gap-14">
-              {PRODUCTS.map((prod) => (
-                <div
-                  key={prod.name}
-                  className="shop-card about-value-card group cursor-pointer"
-                  onClick={() => openModal(prod)}
-                >
-                  {/* Image Wrap */}
-                  <div className="relative aspect-[16/10] w-full rounded-sm bg-[#faf6f0]/40 border border-[#b48b78]/10 p-8 flex items-center justify-center mb-6 overflow-hidden">
-                    <img
-                      src={prod.image}
-                      alt={prod.name}
-                      className="h-[180px] w-auto object-contain transition-transform duration-700 group-hover:scale-108"
-                    />
-                    <div className="about-story-img-shine absolute inset-0 pointer-events-none" />
+              {PRODUCTS.map((prod) => {
+                const isFirstSpray = prod.category === "Tanning Salt Spray" && !PRODUCTS.slice(0, PRODUCTS.indexOf(prod)).some(p => p.category === "Tanning Salt Spray");
+                return (
+                  <div
+                    key={prod.name}
+                    id={isFirstSpray ? "tanning-sprays-section" : undefined}
+                    className="shop-card about-value-card group cursor-pointer"
+                    onClick={() => openModal(prod)}
+                  >
+                    {/* Image Wrap */}
+                    <div className="relative aspect-[16/10] w-full rounded-sm bg-[#faf6f0]/40 border border-[#b48b78]/10 p-8 flex items-center justify-center mb-6 overflow-hidden">
+                      <img
+                        src={prod.image}
+                        alt={prod.name}
+                        className="h-[180px] w-auto object-contain transition-transform duration-700 group-hover:scale-108"
+                      />
+                      <div className="about-story-img-shine absolute inset-0 pointer-events-none" />
+                    </div>
+
+                    <span className="font-sans-premium text-[7px] tracking-[0.2em] text-[#b48b78] block mb-1">
+                      {prod.category}
+                    </span>
+                    <h3 className="about-value-title font-display text-lg text-[#3d2b1f] mb-3 leading-tight">
+                      {prod.name}
+                    </h3>
+
+                    {/* Embedded Product Description */}
+                    <p className="font-cormorant text-[1.1rem] leading-relaxed text-[#5c4538]/85 italic mb-6">
+                      {prod.description}
+                    </p>
+
+                    <div className="about-ornament-divider flex items-center gap-2 mb-6 opacity-30">
+                      <div className="about-ornament-div-line flex-1" />
+                      <span className="about-ornament-div-glyph font-forum">✦</span>
+                      <div className="about-ornament-div-line flex-1" />
+                    </div>
+
+                    <div className="flex items-center justify-between mt-4">
+                      <span className="font-display text-lg font-bold text-[#3d2b1f]">{prod.price}</span>
+                      <button className="text-[7px] tracking-[0.2em] font-sans-premium border-b border-[#b48b78]/30 pb-0.5 text-[#5c4538] hover:text-[#2a1f18] hover:border-[#2a1f18] transition-colors">
+                        VIEW DETAILS
+                      </button>
+                    </div>
                   </div>
-
-                  <span className="font-sans-premium text-[7px] tracking-[0.2em] text-[#b48b78] block mb-1">
-                    {prod.category}
-                  </span>
-                  <h3 className="about-value-title font-display text-lg text-[#3d2b1f] mb-3 leading-tight">
-                    {prod.name}
-                  </h3>
-
-                  {/* Embedded Product Description */}
-                  <p className="font-cormorant text-[1.1rem] leading-relaxed text-[#5c4538]/85 italic mb-6">
-                    {prod.description}
-                  </p>
-
-                  <div className="about-ornament-divider flex items-center gap-2 mb-6 opacity-30">
-                    <div className="about-ornament-div-line flex-1" />
-                    <span className="about-ornament-div-glyph font-forum">✦</span>
-                    <div className="about-ornament-div-line flex-1" />
-                  </div>
-
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="font-forum text-md text-[#b48b78]">{prod.price}</span>
-                    <button className="text-[7px] tracking-[0.2em] font-sans-premium border-b border-[#b48b78]/30 pb-0.5 text-[#5c4538] hover:text-[#2a1f18] hover:border-[#2a1f18] transition-colors">
-                      VIEW DETAILS
-                    </button>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

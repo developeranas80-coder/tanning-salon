@@ -117,12 +117,12 @@ export default function PerfectTanSection() {
             <div className="h-[1px] bg-[#b48b78]/30 flex-1" />
           </div>
           <p className="tan-reveal font-cormorant text-md md:text-lg text-[#5c4538]/90 italic leading-relaxed">
-            Our premium range of lotions, mists, shots and goggles are designed to help you get the most from every session.
+            Our premium range of lotions and sprays are designed to help you get the most from every session.
           </p>
         </div>
 
-        {/* ── 4-Column Card Grid ── */}
-        <div className="tan-cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        {/* ── 2-Column Card Grid (Centering Remaining Cards) ── */}
+        <div className="tan-cards-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[840px] mx-auto mb-20">
 
           {/* Card 1: Lotions */}
           <div className="tan-card flex flex-col justify-between p-8 bg-[#fcf9f6]/85 backdrop-blur-md border border-[#b48b78]/25 hover:border-[#b48b78]/55 rounded-md hover:shadow-[0_15px_35px_rgba(180,139,120,0.08)] transition-all duration-500 group">
@@ -185,10 +185,10 @@ export default function PerfectTanSection() {
             </div>
           </div>
 
-          {/* Card 2: Mists */}
+          {/* Card 2: Sprays */}
           <div className="tan-card flex flex-col justify-between p-8 bg-[#fcf9f6]/85 backdrop-blur-md border border-[#b48b78]/25 hover:border-[#b48b78]/55 rounded-md hover:shadow-[0_15px_35px_rgba(180,139,120,0.08)] transition-all duration-500 group">
             <div className="flex flex-col items-center text-center">
-              {/* Gold Outline Spray Mist SVG */}
+              {/* Gold Outline Spray SVG */}
               <div className="p-4 bg-[#fbf8f5] rounded-full border border-[#b48b78]/15 mb-5 group-hover:scale-105 transition-transform duration-500">
                 <svg
                   className="w-10 h-10 text-[#b48b78]"
@@ -205,7 +205,7 @@ export default function PerfectTanSection() {
               </div>
 
               <h4 className="font-sans-premium text-[9px] tracking-[0.25em] text-[#3d2b1f] font-semibold mb-3 uppercase">
-                Tanning Mists
+                Tanning Sprays
               </h4>
               <p className="font-cormorant text-[14.5px] text-[#3d2b1f] leading-relaxed mb-6 italic">
                 Quick, easy and mess-free top up tan on the go.
@@ -243,141 +243,11 @@ export default function PerfectTanSection() {
               
               <button
                 onClick={() => {
-                  document.getElementById("product-catalog")?.scrollIntoView({ behavior: "smooth" });
+                  document.getElementById("tanning-sprays-section")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="w-full text-center py-2.5 px-4 rounded-full border border-[#b48b78]/30 hover:border-[#b48b78] text-[#5c4538] hover:text-white hover:bg-[#b48b78] transition-all duration-300 font-sans-premium text-[7.5px] tracking-[0.2em] uppercase"
               >
-                Explore Mists
-              </button>
-            </div>
-          </div>
-
-          {/* Card 3: Shots */}
-          <div className="tan-card flex flex-col justify-between p-8 bg-[#fcf9f6]/85 backdrop-blur-md border border-[#b48b78]/25 hover:border-[#b48b78]/55 rounded-md hover:shadow-[0_15px_35px_rgba(180,139,120,0.08)] transition-all duration-500 group">
-            <div className="flex flex-col items-center text-center">
-              {/* Gold Outline Shot Dropper Bottle SVG */}
-              <div className="p-4 bg-[#fbf8f5] rounded-full border border-[#b48b78]/15 mb-5 group-hover:scale-105 transition-transform duration-500">
-                <svg
-                  className="w-10 h-10 text-[#b48b78]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M8 22h8M12 22V9M9 9h6a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1Z" />
-                  <circle cx="12" cy="14.5" r="2.5" />
-                  <path d="M12 12v5M10 14.5h4" />
-                </svg>
-              </div>
-
-              <h4 className="font-sans-premium text-[9px] tracking-[0.25em] text-[#3d2b1f] font-semibold mb-3 uppercase">
-                Tanning Shots
-              </h4>
-              <p className="font-cormorant text-[14.5px] text-[#3d2b1f] leading-relaxed mb-6 italic">
-                Small but powerful boosts to maximise your tanning results.
-              </p>
-            </div>
-
-            <div>
-              <div className="w-10 h-[1px] bg-[#b48b78]/30 mx-auto mb-5" />
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Intensifies your tan</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Supports melanin production</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Use with every tanning session</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Great value, big results</span>
-                </li>
-              </ul>
-              
-              <button
-                onClick={() => {
-                  document.getElementById("product-catalog")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full text-center py-2.5 px-4 rounded-full border border-[#b48b78]/30 hover:border-[#b48b78] text-[#5c4538] hover:text-white hover:bg-[#b48b78] transition-all duration-300 font-sans-premium text-[7.5px] tracking-[0.2em] uppercase"
-              >
-                Explore Shots
-              </button>
-            </div>
-          </div>
-
-          {/* Card 4: Goggles */}
-          <div className="tan-card flex flex-col justify-between p-8 bg-[#fcf9f6]/85 backdrop-blur-md border border-[#b48b78]/25 hover:border-[#b48b78]/55 rounded-md hover:shadow-[0_15px_35px_rgba(180,139,120,0.08)] transition-all duration-500 group">
-            <div className="flex flex-col items-center text-center">
-              {/* Gold Outline Tanning Goggles SVG */}
-              <div className="p-4 bg-[#fbf8f5] rounded-full border border-[#b48b78]/15 mb-5 group-hover:scale-105 transition-transform duration-500">
-                <svg
-                  className="w-10 h-10 text-[#b48b78]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M2 12c1.5 2 4.5 3 7 1.5S12 9 12 9s.5 3 3 4.5 5.5.5 7-1.5M2 12h20" />
-                  <circle cx="7.5" cy="11.5" r="2.5" />
-                  <circle cx="16.5" cy="11.5" r="2.5" />
-                </svg>
-              </div>
-
-              <h4 className="font-sans-premium text-[9px] tracking-[0.25em] text-[#3d2b1f] font-semibold mb-3 uppercase">
-                Tanning Goggles
-              </h4>
-              <p className="font-cormorant text-[14.5px] text-[#3d2b1f] leading-relaxed mb-6 italic">
-                Protect your eyes in style with our comfortable goggles.
-              </p>
-            </div>
-
-            <div>
-              <div className="w-10 h-[1px] bg-[#b48b78]/30 mx-auto mb-5" />
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Protects against UV exposure</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Comfortable & lightweight</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <svg className="w-3.5 h-3.5 text-[#b48b78] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="font-sans-readable text-[12.5px] text-[#2a1f18] font-medium">Essential for a safe tanning experience</span>
-                </li>
-              </ul>
-              
-              <button
-                onClick={() => {
-                  document.getElementById("product-catalog")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full text-center py-2.5 px-4 rounded-full border border-[#b48b78]/30 hover:border-[#b48b78] text-[#5c4538] hover:text-white hover:bg-[#b48b78] transition-all duration-300 font-sans-premium text-[7.5px] tracking-[0.2em] uppercase"
-              >
-                Explore Goggles
+                Explore Sprays
               </button>
             </div>
           </div>

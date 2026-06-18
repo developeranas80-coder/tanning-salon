@@ -774,14 +774,17 @@ export default function GoalPage() {
                       <div key={city} className="flex flex-col items-center">
                         <button
                           onClick={() => toggleStamp(city)}
-                          className={`w-16 h-16 rounded-full border-2 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500 shadow-inner ${stamps[city]
+                          className={`w-20 h-20 rounded-full border-2 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500 shadow-inner ${stamps[city]
                             ? "bg-white border-[#b48b78] scale-105 shadow-[0_0_15px_rgba(180,139,120,0.2)]"
                             : "bg-[#faf6f0] border-dashed border-[#b48b78]/30 hover:border-[#b48b78]/60"
                             }`}
                           aria-label={`Stamp for ${city}`}
                         >
                           {!stamps[city] ? (
-                            <span className="font-sans-premium text-[8px] tracking-widest text-[#b48b78]/60 uppercase">
+                            <span
+                              className="font-sans-readable font-bold text-[#b48b78]/60 uppercase"
+                              style={{ fontSize: "10px", letterSpacing: "0.05em" }}
+                            >
                               {city.slice(0, 3)}
                             </span>
                           ) : (
@@ -791,15 +794,21 @@ export default function GoalPage() {
                               <div className="absolute inset-0.5 rounded-full border border-double border-[#b48b78]" />
 
                               {/* Palm tree */}
-                              <svg className="w-4 h-4 text-[#b48b78] mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                              <svg className="w-5 h-5 text-[#b48b78] mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 <path d="M12 22V5M12 5c2 0 4-1.5 5-3M12 7c-2 0-4-1.5-5-3M12 9c3 0 5-1.5 6-3.5M12 11c-3 0-5-1.5-6-3.5" />
                               </svg>
 
                               {/* City Stamp text */}
-                              <span className="font-sans-premium text-[4.5px] tracking-widest font-black leading-none uppercase">
+                              <span
+                                className="font-sans-readable font-extrabold leading-none uppercase text-[#b48b78]"
+                                style={{ fontSize: "9px", letterSpacing: "0.04em" }}
+                              >
                                 {city}
                               </span>
-                              <span className="font-forum text-[3px] tracking-wider text-[#b48b78] uppercase mt-0.5 font-bold">
+                              <span
+                                className="font-sans-readable uppercase mt-0.5 font-bold text-[#b48b78]"
+                                style={{ fontSize: "6px", letterSpacing: "0.06em" }}
+                              >
                                 PASSED
                               </span>
                             </div>
