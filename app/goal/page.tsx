@@ -95,6 +95,7 @@ const MEMBERSHIPS = [
 
 export default function GoalPage() {
   const contentRef = useRef<HTMLDivElement>(null);
+  const mapScrollRef = useRef<HTMLDivElement>(null);
   const [stamps, setStamps] = useState<{ [key: string]: boolean }>({
     Dubai: false,
     Maldives: false,
@@ -105,6 +106,16 @@ export default function GoalPage() {
 
   const toggleStamp = (city: string) => {
     setStamps((prev) => ({ ...prev, [city]: !prev[city] }));
+  };
+
+  const scrollMap = (direction: "left" | "right") => {
+    const el = mapScrollRef.current;
+    if (!el) return;
+    const scrollAmount = 240;
+    el.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -198,7 +209,7 @@ export default function GoalPage() {
             </div>
 
             {/* Flight Path SVG Map & Compass */}
-            <div className="goal-reveal relative flex flex-col md:flex-row items-center justify-center gap-10 bg-[#fcf9f6]/40 border border-[#b48b78]/15 rounded-2xl p-8 md:p-12 mb-16 backdrop-blur-[2px]">
+            <div className="goal-reveal relative flex flex-col md:flex-row items-center justify-center gap-10 bg-[#fcf9f6]/40 border border-[#b48b78]/15 rounded-2xl  p-8 md:p-12 mb-16 backdrop-blur-[2px]">
 
               {/* Left Compass */}
               <div className="flex-shrink-0 flex flex-col items-center select-none">
@@ -219,123 +230,152 @@ export default function GoalPage() {
               </div>
 
               {/* Styled Dash World Map & Path */}
-              <div className="flex-1 w-full overflow-x-auto pb-2 scrollbar-none">
-                <div className="min-w-[580px] relative aspect-[800/380] rounded-xl overflow-hidden bg-[#faf6f0]/30 border border-[#b48b78]/15 shadow-inner">
-                  {/* Gold Watercolor Map Texture Background */}
-                  <img
-                    src="/gold_world_map.png"
-                    alt="Gold World Map Background"
-                    className="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-multiply pointer-events-none"
-                  />
-
-                  {/* Inline CSS animation for flight paths and scrollbar hiding */}
-                  <style dangerouslySetInnerHTML={{
-                    __html: `
-                    @keyframes map-dash {
-                      to {
-                        stroke-dashoffset: -20;
-                      }
-                    }
-                    .animate-map-dash {
-                      animation: map-dash 1.5s linear infinite;
-                    }
-                    .scrollbar-none::-webkit-scrollbar {
-                      display: none;
-                    }
-                    .scrollbar-none {
-                      -ms-overflow-style: none;
-                      scrollbar-width: none;
-                    }
-                  `}} />
-
-                  {/* SVG Overlay */}
-                  <svg className="absolute inset-0 w-full h-full text-[#b48b78]" viewBox="0 0 800 380" fill="none" stroke="currentColor" strokeWidth="1">
-                    {/* Flight Dashed Paths spanning the entire map */}
-                    <path
-                      d="M 180,190 C 220,130 280,100 360,120 C 400,140 440,150 480,170 C 500,190 530,210 560,230 C 595,210 620,190 650,200"
-                      fill="none"
-                      stroke="#b48b78"
-                      strokeWidth="1.8"
-                      strokeDasharray="5 5"
-                      className="opacity-90 animate-map-dash"
-                    />
-                    <path
-                      d="M 650,200 C 600,100 400,60 180,190"
-                      fill="none"
-                      stroke="#b48b78"
-                      strokeWidth="1.2"
-                      strokeDasharray="4 4"
-                      className="opacity-50 animate-map-dash"
-                      style={{ animationDirection: 'reverse' }}
-                    />
-
-                    {/* Flight airplane symbol */}
-                    <g transform="translate(260, 140) rotate(-15) scale(0.8)">
-                      <path d="M12 2L2 22l10-6 10 6L12 2z" fill="#b48b78" stroke="#b48b78" strokeWidth="1" />
-                    </g>
-
-                    {/* Cities Labels/Hotspots */}
-
-                    {/* DOMINICAN REPUBLIC (Caribbean/Americas - far left) */}
-                    <line x1="180" y1="165" x2="180" y2="183" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
-                    <circle cx="180" cy="190" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
-                      <animate attributeName="r" values="4;12" dur="2.5s" begin="2s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="2s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="180" cy="190" r="4.5" fill="#b48b78" />
-                    <rect x="130" y="147" width="100" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
-                    <text x="180" y="159" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.08em', fontWeight: 'bold' }} fontSize="8">
-                      DOMINICAN REP.
-                    </text>
-
-                    {/* SALON */}
-                    <line x1="360" y1="95" x2="360" y2="113" stroke="#3d2b1f" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
-                    <circle cx="360" cy="120" r="5" fill="none" stroke="#3d2b1f" strokeWidth="1.5" opacity="0.8">
-                      <animate attributeName="r" values="5;14" dur="2.5s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.8;0" dur="2.5s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="360" cy="120" r="5" fill="#3d2b1f" />
-                    <rect x="325" y="77" width="70" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
-                    <text x="360" y="89" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
-                      SALON
-                    </text>
-
-                    {/* DUBAI */}
-                    <line x1="480" y1="145" x2="480" y2="163" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
-                    <circle cx="480" cy="170" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
-                      <animate attributeName="r" values="4;12" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="480" cy="170" r="4.5" fill="#b48b78" />
-                    <rect x="445" y="127" width="70" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
-                    <text x="480" y="139" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
-                      DUBAI
-                    </text>
-
-                    {/* MALDIVES */}
-                    <line x1="560" y1="237" x2="560" y2="255" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
-                    <circle cx="560" cy="230" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
-                      <animate attributeName="r" values="4;12" dur="2.5s" begin="1s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="1s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="560" cy="230" r="4.5" fill="#b48b78" />
-                    <rect x="520" y="255" width="80" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
-                    <text x="560" y="267" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
-                      MALDIVES
-                    </text>
-
-                    {/* THAILAND */}
-                    <line x1="650" y1="175" x2="650" y2="193" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
-                    <circle cx="650" cy="200" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
-                      <animate attributeName="r" values="4;12" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="650" cy="200" r="4.5" fill="#b48b78" />
-                    <rect x="610" y="157" width="80" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
-                    <text x="650" y="169" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
-                      THAILAND
-                    </text>
+              <div className="flex-1 w-full relative">
+                {/* Left Scroll Arrow (Mobile only) */}
+                <button
+                  type="button"
+                  onClick={() => scrollMap("left")}
+                  className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#b48b78]/25 flex items-center justify-center text-[#5c4538] hover:text-[#b48b78] hover:bg-white active:scale-95 transition-all shadow-md md:hidden"
+                  aria-label="Scroll map left"
+                >
+                  <svg className="w-5 h-5 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
+                </button>
+
+                {/* Right Scroll Arrow (Mobile only) */}
+                <button
+                  type="button"
+                  onClick={() => scrollMap("right")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md border border-[#b48b78]/25 flex items-center justify-center text-[#5c4538] hover:text-[#b48b78] hover:bg-white active:scale-95 transition-all shadow-md md:hidden"
+                  aria-label="Scroll map right"
+                >
+                  <svg className="w-5 h-5 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                <div
+                  ref={mapScrollRef}
+                  className="w-full overflow-x-auto pb-2 scrollbar-none rounded-xl"
+                >
+                  <div className="min-w-[680px] md:min-w-0 md:w-full relative aspect-[800/380] rounded-xl overflow-hidden bg-[#faf6f0]/30 border border-[#b48b78]/15 shadow-inner">
+                    {/* Gold Watercolor Map Texture Background */}
+                    <img
+                      src="/gold_world_map.png"
+                      alt="Gold World Map Background"
+                      className="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-multiply pointer-events-none"
+                    />
+
+                    {/* Inline CSS animation for flight paths and scrollbar hiding */}
+                    <style dangerouslySetInnerHTML={{
+                      __html: `
+                      @keyframes map-dash {
+                        to {
+                          stroke-dashoffset: -20;
+                        }
+                      }
+                      .animate-map-dash {
+                        animation: map-dash 1.5s linear infinite;
+                      }
+                      .scrollbar-none::-webkit-scrollbar {
+                        display: none;
+                      }
+                      .scrollbar-none {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                      }
+                    `}} />
+
+                    {/* SVG Overlay */}
+                    <svg className="absolute inset-0 w-full h-full text-[#b48b78]" viewBox="0 0 800 380" fill="none" stroke="currentColor" strokeWidth="1">
+                      {/* Flight Dashed Paths spanning the entire map */}
+                      <path
+                        d="M 180,190 C 220,130 280,90 378,102 C 410,130 440,150 480,170 C 500,190 530,210 560,230 C 595,210 620,190 650,200"
+                        fill="none"
+                        stroke="#b48b78"
+                        strokeWidth="1.8"
+                        strokeDasharray="5 5"
+                        className="opacity-90 animate-map-dash"
+                      />
+                      <path
+                        d="M 650,200 C 600,100 400,60 180,190"
+                        fill="none"
+                        stroke="#b48b78"
+                        strokeWidth="1.2"
+                        strokeDasharray="4 4"
+                        className="opacity-50 animate-map-dash"
+                        style={{ animationDirection: 'reverse' }}
+                      />
+
+                      {/* Flight airplane symbol */}
+                      <g transform="translate(260, 140) rotate(-15) scale(0.8)">
+                        <path d="M12 2L2 22l10-6 10 6L12 2z" fill="#b48b78" stroke="#b48b78" strokeWidth="1" />
+                      </g>
+
+                      {/* Cities Labels/Hotspots */}
+
+                      {/* DOMINICAN REPUBLIC (Caribbean/Americas - far left) */}
+                      <line x1="180" y1="165" x2="180" y2="183" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="180" cy="190" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="4;12" dur="2.5s" begin="2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="2s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="180" cy="190" r="4.5" fill="#b48b78" />
+                      <rect x="130" y="147" width="100" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="180" y="159" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.08em', fontWeight: 'bold' }} fontSize="8">
+                        DOMINICAN REP.
+                      </text>
+
+                      {/* SALON */}
+                      <line x1="378" y1="77" x2="378" y2="95" stroke="#3d2b1f" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="378" cy="102" r="5" fill="none" stroke="#3d2b1f" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="5;14" dur="2.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="378" cy="102" r="5" fill="#3d2b1f" />
+                      <rect x="343" y="59" width="70" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="378" y="71" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
+                        SALON
+                      </text>
+
+                      {/* DUBAI */}
+                      <line x1="480" y1="145" x2="480" y2="163" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="480" cy="170" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="4;12" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="480" cy="170" r="4.5" fill="#b48b78" />
+                      <rect x="445" y="127" width="70" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="480" y="139" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
+                        DUBAI
+                      </text>
+
+                      {/* MALDIVES */}
+                      <line x1="560" y1="237" x2="560" y2="255" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="560" cy="230" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="4;12" dur="2.5s" begin="1s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="1s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="560" cy="230" r="4.5" fill="#b48b78" />
+                      <rect x="520" y="255" width="80" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="560" y="267" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
+                        MALDIVES
+                      </text>
+
+                      {/* THAILAND */}
+                      <line x1="650" y1="175" x2="650" y2="193" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="650" cy="200" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="4;12" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="1.5s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="650" cy="200" r="4.5" fill="#b48b78" />
+                      <rect x="610" y="157" width="80" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="650" y="169" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
+                        THAILAND
+                      </text>
+                    </svg>
+                  </div>
                 </div>
               </div>
 

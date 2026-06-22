@@ -3105,6 +3105,14 @@ body::after {
    ─── MOBILE MENU ACTIVE BURGER ANIMATION & DRAWER ───
 ══════════════════════════════════════════════════════════ */
 
+.mobile-menu-drawer {
+  background: linear-gradient(165deg,
+      #2a1f18 0%,
+      #1e1410 40%,
+      #1a110d 65%,
+      #231810 100%) !important;
+}
+
 /* Burger button active transition */
 .menu-btn.menu-active .menu-line:first-child {
   transform: translateY(4.5px) rotate(45deg);

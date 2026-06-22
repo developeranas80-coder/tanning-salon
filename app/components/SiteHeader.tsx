@@ -147,9 +147,8 @@ export default function SiteHeader({ visible, headerRef }: SiteHeaderProps) {
         </div>
       </header>
 
-      {/* Mobile Premium Menu Drawer Overlay */}
       <div
-        className={`mobile-menu-drawer fixed inset-0 z-50 flex flex-col justify-between bg-[#19120e]/98 backdrop-blur-xl px-8 py-24 transition-all duration-500 ease-in-out md:hidden ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        className={`mobile-menu-drawer fixed inset-0 z-50 flex flex-col justify-between overflow-hidden backdrop-blur-xl px-8 py-24 transition-all duration-500 ease-in-out md:hidden ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
           }`}
       >
         {/* Soft elegant warm light orb behind menu */}
@@ -163,6 +162,37 @@ export default function SiteHeader({ visible, headerRef }: SiteHeaderProps) {
           style={{ background: "radial-gradient(circle, rgba(227, 201, 172, 0.3) 0%, transparent 70%)" }}
           aria-hidden
         />
+
+        {/* Blurred Leaf Decorations (from footer) */}
+        {/* Palm Leaf — left side */}
+        <div className="footer-leaf footer-leaf-left pointer-events-none absolute select-none" aria-hidden>
+          <img
+            src="/hero_palm_leaf.png"
+            alt=""
+            className="footer-leaf-img"
+            style={{ filter: "blur(8px) brightness(0.55) saturate(0.7)", opacity: 0.45 }}
+          />
+        </div>
+
+        {/* Monstera Leaf — right side */}
+        <div className="footer-leaf footer-leaf-right pointer-events-none absolute select-none" aria-hidden>
+          <img
+            src="/hero_monstera_leaf.png"
+            alt=""
+            className="footer-leaf-img"
+            style={{ filter: "blur(10px) brightness(0.5) saturate(0.65)", opacity: 0.38 }}
+          />
+        </div>
+
+        {/* Palm Leaf small — top center bleed */}
+        <div className="footer-leaf footer-leaf-top pointer-events-none absolute select-none" aria-hidden>
+          <img
+            src="/hero_palm_leaf.png"
+            alt=""
+            className="footer-leaf-img"
+            style={{ filter: "blur(14px) brightness(0.45) saturate(0.5)", opacity: 0.22, transform: "rotate(120deg) scaleX(-1)" }}
+          />
+        </div>
 
         {/* Content */}
         <div className="flex flex-col items-center justify-center flex-1 space-y-6 text-center">

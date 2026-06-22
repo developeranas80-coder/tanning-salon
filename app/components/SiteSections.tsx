@@ -336,7 +336,7 @@ function ContactSection() {
                       <option value="mauritius">Mauritius</option>
                       <option value="seychelles">Seychelles</option>
                       <option value="thailand">Thailand</option>
-                      <option value="dominican-republic">Dominican Republic</option>
+                      {/* <option value="dominican-republic">Dominican Republic</option> */}
                     </select>
                     <div className="contact-field-line" />
                   </div>
