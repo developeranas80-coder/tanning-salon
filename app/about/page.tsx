@@ -237,14 +237,14 @@ export default function AboutPage() {
                 luxury, and expert care converge to create moments of pure, sun-kissed bliss.
               </p>
               <p className="about-page-body font-cormorant">
-                From our hand-selected premium beds to our complimentary artisanal espresso bar, every
+                From our hand-selected premium beds to our artisanal espresso bar, every
                 element has been thoughtfully designed to transport you to a world of coastal serenity
                 and timeless elegance.
               </p>
 
               <div className="mt-8">
                 <a href="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach" target="_blank" rel="noopener noreferrer" className="btn-luxury inline-block px-10 py-4 text-[8px]">
-                  BOOK YOUR EXPERIENCE
+                  RESERVE A SUITE
                 </a>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function AboutPage() {
         <InnerPageCta 
           title={<>Ready to Experience<br /><em>the Difference?</em></>}
           subtitle="Step into our sanctuary and discover why our guests never settle for anything less."
-          buttonText="RESERVE YOUR SUITE"
+          buttonText="RESERVE A SUITE"
           buttonHref="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach"
         />
       </div>

@@ -28,7 +28,7 @@ const TESTIMONIALS = [
     stars: 5,
   },
   {
-    quote: "From the complimentary espresso to the plush suite, every touchpoint exudes luxury. My self-care ritual now starts here.",
+    quote: "From the artisanal espresso to the plush suite, every touchpoint exudes luxury. My self-care ritual now starts here.",
     name: "Elena V.",
     title: "Onyx Elite Guest",
     stars: 5,
@@ -101,6 +101,18 @@ export default function TestimonialSection() {
             <TestimonialCard key={i} t={t} />
           ))}
         </div>
+      </div>
+
+      {/* Review Button */}
+      <div className="relative z-10 mt-12 flex justify-center">
+        <a
+          href="https://search.google.com/local/writereview?placeid=ChIJR4TWh8VJiEgR2p3687352kM"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-luxury px-10 py-4 text-[8px]"
+        >
+          WRITE A REVIEW
+        </a>
       </div>
 
       {/* Bottom rule */}

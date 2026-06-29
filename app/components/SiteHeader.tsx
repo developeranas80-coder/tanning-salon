@@ -130,7 +130,7 @@ export default function SiteHeader({ visible, headerRef }: SiteHeaderProps) {
             onClick={() => setMenuOpen(false)}
             className="btn-luxury ml-auto px-4 py-1.5 text-[9px] md:hidden"
           >
-            Book
+            Reserve
           </a>
 
           {/* Mobile Burger Menu Button */}

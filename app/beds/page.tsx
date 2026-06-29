@@ -19,7 +19,7 @@ const BEDS = [
     model: "megaSun K9SL",
     type: "Premium LED Flagship Bed",
     status: "Active",
-    notes: "Silver & Gold Members Only",
+    notes: "Premium SunSphere LED facial refractor technology.",
     desc: "Experience our premium LED flagship tanning bed in the Dubai suite. Engineered for high-efficiency tanning with intelligent SunSphere LED face & shoulder lamps for a flawless, custom-tailored luxury glow.",
     specs: ["SunSphere Pro Facials", "Active Air Cooling", "Bluetooth Sound System", "Intelligent Control Display"],
     image: "/dubai_k9sl.png?v=5",
@@ -30,7 +30,7 @@ const BEDS = [
     model: "megaSun K9SL",
     type: "Premium LED Flagship Bed",
     status: "Active",
-    notes: "Silver & Gold Members Only",
+    notes: "Advanced LED tanning with refreshing aqua mist.",
     desc: "Elevate your tanning ritual in the Maldives suite. Replicating natural sunshine spectrums using advanced megasun LED tanning systems, providing deep hydration and rapid bronze results.",
     specs: ["SunSphere Pro Facials", "Aqua Fresh Mist", "AromaTherapy Infusions", "Ergonomic Contour Glass"],
     image: "/maldives_k9sl.png?v=5",
@@ -41,7 +41,7 @@ const BEDS = [
     model: "megaSun P9S Copper Rose",
     type: "Luxury Premium Tanning Bed",
     status: "Active",
-    notes: "Silver & Gold Members Only",
+    notes: "Exclusive Studio F. A. Porsche design.",
     desc: "Indulge in absolute luxury in the Mauritius suite. Our stunning Copper Rose premium bed combines aesthetic excellence by Studio F. A. Porsche with high-end tanning power and red-light skin rejuvenation.",
     specs: ["Porsche Design Exterior", "Beauty Light Collagen Booster", "Climatronic Temperature Control", "Wireless Smartphone Charging"],
     image: "/mauritius_p9s.png?v=5",
@@ -49,34 +49,34 @@ const BEDS = [
   {
     suite: "Room 4 - Seychelles",
     name: "Seychelles",
-    model: "megaSun 8000",
-    type: "High-Performance Tanning Bed",
+    model: "Luxura V8",
+    type: "Premium Stand-Up Tanning Unit",
     status: "Active",
-    notes: "Silver & Gold Members Only",
-    desc: "A high-performance tanning bed located in the Seychelles suite. Equipped with 50 high-pressure tubes and hyper-focused glass facial reflectors to create a deep, beautiful, and long-lasting golden tan.",
-    specs: ["High-Pressure Reflector System", "Intelligent Ventilation", "Smart Touch Screen", "Surround Sound Acoustics"],
+    notes: "Powerful 360° vertical tanning stand-up.",
+    desc: "Step into the Seychelles suite to experience the Luxura V8 standup booth. Equipped with high-performance tanning tubes and advanced vertical ventilation for a perfect, even glow.",
+    specs: ["360° Zero-Pressure Tanning", "V8 Body-Cooling System", "Premium Sound Acoustics", "Intelligent Touch Control"],
     image: "/seychelles_8000.png?v=5",
   },
   {
     suite: "Room 5 - Thailand",
     name: "Thailand",
-    model: "Stand-Up Booth",
-    type: "Stand-Up Tanning Unit",
+    model: "megaSun 8000",
+    type: "High-Performance Lay-Down Bed",
     status: "Active",
-    notes: "Silver & Gold Members Only",
-    desc: "For flawless, all-over coverage without pressure points, step into the Thailand suite's stand-up booth. Integrated vertical ventilation and intense surround lamps offer rapid, even results in premium comfort.",
-    specs: ["360° Zero-Pressure Tanning", "Body-Curve Exhaust System", "High-Efficiency Turbo Tubes", "Touch Control Panel"],
+    notes: "High-pressure lay-down tanning system.",
+    desc: "Experience deep, long-lasting golden tan in the Thailand suite. Features 50 high-pressure tubes and hyper-focused glass facial reflectors in our classic lay-down design.",
+    specs: ["High-Pressure Reflector System", "Intelligent Ventilation", "Smart Touch Screen", "Surround Sound Acoustics"],
     image: "/thailand_standup.png?v=5",
   },
   {
     suite: "Room 6 - Dominican Republic",
     name: "Dominican Republic",
-    model: "Future Bed",
-    type: "Reserved for Sanctuary Expansion",
-    status: "Planned",
-    notes: "Reserved for expansion",
-    desc: "The future of tanning. Our conceptual sanctuary suite is reserved for upcoming luxury expansion, featuring next-generation UV/red-light hybrid technology and holographic wellness controls.",
-    specs: ["Holographic Wellness UI", "Hyper-Customizable Spectrum", "Full Sensory Integration", "Coming Soon in Late 2026"],
+    model: "megaSun T9 Stand-Up",
+    type: "Premium Stand-Up Tanning Unit",
+    status: "Active",
+    notes: "Next-gen hybrid stand-up tanning booth.",
+    desc: "Step into the Dominican Republic suite featuring our T9 stand-up booth. Engineered with next-generation UV/red-light hybrid technology and intense surround lamps for rapid, flawless coverage.",
+    specs: ["360° Tanning Coverage", "Intense Surround Lamps", "Full Sensory Integration", "Smart Cooling System"],
     image: "/dominican_future.png?v=5",
   },
 ];
@@ -238,14 +238,6 @@ export default function BedsPage() {
                     <h3 className="beds-card-title font-display text-3xl text-[#3d2b1f] tracking-wide">
                       {bed.name}
                     </h3>
-                    {bed.status === "Active" && (
-                      <div className="mt-2">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#FAF1EC] border border-[#d39e82]/40 text-[#9e5d3c] font-sans-premium text-[8px] font-bold tracking-wider uppercase">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#9e5d3c] animate-pulse" />
-                          Silver & Gold Members Only
-                        </span>
-                      </div>
-                    )}
                     <div className="about-ornament-divider flex items-center gap-4">
                       <div className="about-ornament-div-line flex-1" />
                       <span className="about-ornament-div-glyph font-forum">✦</span>
@@ -268,15 +260,9 @@ export default function BedsPage() {
                     </div>
 
                     <div className="pt-6">
-                      {bed.status === "Active" ? (
-                        <a href="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach" target="_blank" rel="noopener noreferrer" className="btn-luxury inline-block px-10 py-4 text-[10px] tracking-wider font-semibold">
-                          RESERVE THIS SUITE
-                        </a>
-                      ) : (
-                        <Link href="/contact" className="btn-luxury inline-block px-10 py-4 text-[10px] tracking-wider font-semibold opacity-75 hover:opacity-100">
-                          INQUIRE ABOUT LAUNCH
-                        </Link>
-                      )}
+                      <a href="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach" target="_blank" rel="noopener noreferrer" className="btn-luxury inline-block px-10 py-4 text-[10px] tracking-wider font-semibold">
+                        RESERVE THIS SUITE
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -362,7 +348,7 @@ export default function BedsPage() {
         <InnerPageCta 
           title={<>Select Your Ideal<br /><em>Suntan Suite Today</em></>}
           subtitle="Our team is on standby to help customize your individual tanning schedule."
-          buttonText="BOOK YOUR TANNING SESSION"
+          buttonText="RESERVE A SUITE"
           buttonHref="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach"
         />
       </div>

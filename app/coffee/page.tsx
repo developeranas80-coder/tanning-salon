@@ -29,9 +29,19 @@ const BEVERAGES = [
     category: "Coastal Infusion",
   },
   {
-    name: "Antioxidant Tanning Elixir",
-    notes: "Fresh white peach nectar, premium ceremonial matcha tea, raw organic agave syrup, and carbonated alkaline water. Pure pre-tan focus.",
-    category: "Hydration & Energy",
+    name: "Iced Coconut Vanilla Latte",
+    notes: "Chilled double-shot espresso poured over iced organic coconut milk, lightly sweetened with pure Madagascar vanilla bean syrup.",
+    category: "Iced Coffee Selection",
+  },
+  {
+    name: "Electrolyte Hydration Booster",
+    notes: "Ultra-hydrating blend of organic coconut water, key ionic electrolytes, and a hint of fresh lime. Perfect for post-session mineral recovery.",
+    category: "Electrolytes & Hydration",
+  },
+  {
+    name: "Ceremonial Matcha Latte (Mache)",
+    notes: "Premium organic ceremonial Uji matcha whisked with creamy steamed oat milk and a touch of raw organic honey for antioxidant protection.",
+    category: "Matcha Selection",
   },
 ];
 
@@ -100,11 +110,11 @@ export default function CoffeePage() {
           <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-20">
             {/* Custom Image Box */}
             <div className="about-story-image-wrap relative">
-              <div className="about-story-frame relative overflow-hidden rounded-sm bg-[#faf6f0]/40 backdrop-blur-md p-10 flex items-center justify-center border border-[#b48b78]/15">
+              <div className="about-story-frame relative overflow-hidden rounded-sm bg-[#faf6f0]/40 backdrop-blur-md flex items-center justify-center border border-[#b48b78]/15">
                 <img
-                  src="/hero_lotion_jar.png" // Reusing abstract premium lotion jar as elegant resort centerpiece
+                  src="/coffe.beans.gif"
                   alt="Espresso bar details"
-                  className="h-[280px] w-auto object-contain transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute top-6 left-6 font-forum text-[9px] tracking-widest text-[#b48b78]/70 border border-[#b48b78]/20 px-3 py-1 rounded-full bg-white/40">
                   EST 2026
@@ -137,7 +147,7 @@ export default function CoffeePage() {
                 Why coffee at a luxury tanning salon? We believe that a true tanning sanctuary should relax all your senses. Our espresso bar serves as the ultimate transitional threshold. It is a quiet moment to sit back, sip a custom flamed rosemary latte, and let your body's stress drift away before your session.
               </p>
               <p className="about-page-body font-cormorant">
-                Our single-origin organic coffees are packed with rich antioxidants, promoting deep hydration and natural skin wellness from the inside out. Enjoy your complimentary signature beverage with every single suite reservation.
+                Our single-origin organic coffees are packed with rich antioxidants, promoting deep hydration and natural skin wellness from the inside out. Enjoy our signature beverages with your suite reservation.
               </p>
             </div>
           </div>
@@ -190,10 +200,10 @@ export default function CoffeePage() {
         <TestimonialSection />
 
         {/* ─── Experience Booking CTA ─── */}
-        <InnerPageCta 
+        <InnerPageCta
           title={<>Sip, Relax, & Glow<br /><em>At Our Sanctuary</em></>}
-          subtitle="Every reservation includes our complimentary signature espresso experience."
-          buttonText="RESERVE YOUR GLOW SESSION"
+          subtitle="Every reservation includes access to our signature espresso experience."
+          buttonText="RESERVE A SUITE"
           buttonHref="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach"
         />
       </div>

@@ -16,9 +16,9 @@ const SUITES = [
   { name: "Dubai", room: "Room 1", model: "megaSun K9SL", desc: "Our flagship premium full LED tanning experience." },
   { name: "Maldives", room: "Room 2", model: "megaSun K9SL", desc: "Luxury full LED tanning inspired by paradise." },
   { name: "Mauritius", room: "Room 3", model: "megaSun P9S Copper Rose", desc: "Advanced skincare, collagen features and comfort." },
-  { name: "Seychelles", room: "Room 4", model: "megaSun 8000", desc: "Our ultimate high-performance premium tanning." },
-  { name: "Thailand", room: "Room 5", model: "Stand-Up Booth", desc: "Powerful, fast and refreshing stand-up tanning." },
-  { name: "Dominican Republic", room: "Room 6", model: "Future Expansion", desc: "Coming soon... Reserved for luxury expansion." },
+  { name: "Seychelles", room: "Room 4", model: "Luxura V8", desc: "Powerful 360° stand-up vertical tanning." },
+  { name: "Thailand", room: "Room 5", model: "megaSun 8000", desc: "High-pressure lay-down tanning system." },
+  { name: "Dominican Republic", room: "Room 6", model: "megaSun T9 Stand-Up", desc: "Next-generation hybrid stand-up tanning booth." },
 ];
 
 const LAYDOWN_PRICING = [
@@ -102,6 +102,7 @@ export default function GoalPage() {
     Mauritius: false,
     Seychelles: false,
     Thailand: false,
+    Dominican: false,
   });
 
   const toggleStamp = (city: string) => {
@@ -777,10 +778,7 @@ export default function GoalPage() {
                   {SUITES.map((suite) => (
                     <div
                       key={suite.name}
-                      className={`p-5 rounded-md border bg-white/70 backdrop-blur-sm transition-all duration-300 ${suite.name === "Dominican Republic"
-                        ? "border-dashed border-[#b48b78]/30 opacity-75"
-                        : "border-[#b48b78]/15 hover:border-[#b48b78]/40 hover:shadow-md"
-                        }`}
+                      className="p-5 rounded-md border bg-white/70 backdrop-blur-sm transition-all duration-300 border-[#b48b78]/15 hover:border-[#b48b78]/40 hover:shadow-md"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-sans-premium text-[7px] tracking-wider text-[#b48b78]">
@@ -864,13 +862,13 @@ export default function GoalPage() {
                   {/* Stamp Count Reward Tracker Slogan */}
                   <div className="mt-6 text-center border-t border-[#b48b78]/15 pt-4">
                     <span className="font-sans-readable text-[10px] text-[#5c4538] font-semibold">
-                      {Object.values(stamps).filter(Boolean).length === 5 ? (
+                      {Object.values(stamps).filter(Boolean).length === 6 ? (
                         <span className="text-[#9e5d3c] flex items-center justify-center gap-1.5 animate-bounce">
                           ✦ CONGRATULATIONS! Journey Complete, claim your last bed FREE! ✦
                         </span>
                       ) : (
                         <span>
-                          Tried {Object.values(stamps).filter(Boolean).length} / 5 destination rooms.
+                          Tried {Object.values(stamps).filter(Boolean).length} / 6 destination rooms.
                         </span>
                       )}
                     </span>

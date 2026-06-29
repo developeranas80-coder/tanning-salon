@@ -115,7 +115,7 @@ export default function HomeHero({ visible }: HomeHeroProps) {
             unbeatable vibes.
           </p>
           <a href="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach" target="_blank" rel="noopener noreferrer" className="btn-luxury mt-10 inline-flex items-center gap-4 px-10 py-4 text-[9px]">
-            <span>BOOK NOW</span>
+            <span>RESERVE A SUITE</span>
             <span className="text-lg leading-none">→</span>
           </a>
         </div>

@@ -326,8 +326,8 @@ body::after {
   align-items: center;
   gap: 12px;
   color: rgba(232, 213, 196, 0.6);
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
   transition: color 0.3s ease;
 }
 
@@ -567,8 +567,8 @@ body::after {
 }
 
 .footer-social {
-  font-size: 0.5rem;
-  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
   color: rgba(252, 249, 246, 0.6);
   transition: color 0.3s ease;
 }
@@ -1149,8 +1149,8 @@ body::after {
 
 /* ── Socials ── */
 .footer-social {
-  font-size: 0.48rem;
-  letter-spacing: 0.4em;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
   color: rgba(227, 201, 172, 0.45);
   text-decoration: none;
   transition: color 0.3s ease, letter-spacing 0.3s ease;
@@ -1158,7 +1158,7 @@ body::after {
 
 .footer-social:hover {
   color: rgba(227, 201, 172, 0.88);
-  letter-spacing: 0.48em;
+  /* letter-spacing: 0.48em; */
 }
 
 /* ── Mid divider ── */
@@ -2221,8 +2221,8 @@ body::after {
 }
 
 .contact-social {
-  font-size: 0.5rem;
-  letter-spacing: 0.35em;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
   color: rgba(180, 139, 120, 0.55);
   transition: color 0.3s ease;
   text-decoration: none;

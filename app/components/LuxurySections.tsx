@@ -123,7 +123,7 @@ export default function LuxurySections() {
               Refreshment
             </h2>
             <p className="font-cormorant text-lg italic leading-relaxed text-[#5c4538]/85 md:text-xl">
-              Elevate your experience with our complimentary artisanal coffee bar.
+              Elevate your experience with our artisanal coffee bar.
             </p>
             <button type="button" className="btn-luxury-outline px-10 py-4 text-[9px]">
               VIEW MENU

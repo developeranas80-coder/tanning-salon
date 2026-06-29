@@ -107,7 +107,6 @@ function AboutSection() {
               { n: "6", l: "Premium Beds" },
               { n: "100%", l: "Private Suites" },
               { n: "5★", l: "Guest Care" },
-              { n: "Free", l: "Espresso Bar" },
             ].map((s, i) => (
               <div key={s.l} className="about-stat-item">
                 {i > 0 && <div className="about-stat-divider" />}
@@ -122,7 +121,7 @@ function AboutSection() {
           {/* CTA */}
           <div className="mt-12">
             <a href="https://book.activesaloncloud.com/lifesabeach/login?returnUrl=%2Flifesabeach" target="_blank" rel="noopener noreferrer" className="about-cta-link group inline-flex items-center gap-5">
-              <span className="btn-luxury px-10 py-4 text-[8px]">BOOK YOUR SESSION</span>
+              <span className="btn-luxury px-10 py-4 text-[8px]">RESERVE A SUITE</span>
               <span className="about-cta-aside font-forum">
                 Private suites available
               </span>
@@ -385,7 +384,7 @@ function ContactSection() {
                         <span className="contact-dot" /><span className="contact-dot" /><span className="contact-dot" />
                       </span>
                     ) : (
-                      "BOOK SESSION"
+                      "RESERVE A SUITE"
                     )}
                   </button>
                 </form>

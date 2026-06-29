@@ -52,11 +52,11 @@ const PRODUCTS = [
     ingredients: "L-Tyrosine, Coconut Oil, Vanilla Planifolia Fruit Extract, Beta-Carotene, Aloe Vera Leaf Juice, Shea Butter, Jojoba Oil, Vitamin E, Panthenol (Vitamin B5), Glycerin, Mica.",
   },
 
-  // ─── Cream Sachets (15ml / 0.5 fl oz) — £4.50 each ───
+  // ─── Cream Sachets (15ml / 0.5 fl oz) — £4.00 each ───
   {
     name: "Strawberry Cream Sachet",
     category: "Cream Sachet",
-    price: "£4.50",
+    price: "£4.00",
     image: "/background_black_kardo_2K_202606111031.png",
     description: "Single-use travel-sized strawberry tanning accelerator. Provides a quick blast of intense hydration and tanning boosters before your UV or outdoor session.",
     size: "15ml / 0.5 fl. oz",
@@ -65,7 +65,7 @@ const PRODUCTS = [
   {
     name: "Mango Cream Sachet",
     category: "Cream Sachet",
-    price: "£4.50",
+    price: "£4.00",
     image: "/background_black_kardo_2K_202606111031 (1).png",
     description: "Single-use travel-sized mango tanning accelerator. Enriched with tropical fruit extracts to nourish the skin barrier and prepare it for maximum tan retention.",
     size: "15ml / 0.5 fl. oz",
@@ -74,7 +74,7 @@ const PRODUCTS = [
   {
     name: "Peach Cream Sachet",
     category: "Cream Sachet",
-    price: "£4.50",
+    price: "£4.00",
     image: "/background_black_kardo_2K_202606111031 (2).png",
     description: "Single-use travel-sized peach tanning accelerator. Boosts natural melanin production and keeps skin moisturized for a beautifully smooth tan.",
     size: "15ml / 0.5 fl. oz",
@@ -83,7 +83,7 @@ const PRODUCTS = [
   {
     name: "Coconut Vanilla Cream Sachet",
     category: "Cream Sachet",
-    price: "£4.50",
+    price: "£4.00",
     image: "/background_black_kardo_2K_202606111031 (3).png",
     description: "Single-use travel-sized coconut & vanilla tanning accelerator. Deeply hydrates with natural oils to prevent dry skin during UV light sessions.",
     size: "15ml / 0.5 fl. oz",
