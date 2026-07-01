@@ -292,7 +292,7 @@ export default function GoalPage() {
                     <svg className="absolute inset-0 w-full h-full text-[#b48b78]" viewBox="0 0 800 380" fill="none" stroke="currentColor" strokeWidth="1">
                       {/* Flight Dashed Paths spanning the entire map */}
                       <path
-                        d="M 180,190 C 220,130 280,90 378,102 C 410,130 440,150 480,170 C 500,190 530,210 560,230 C 595,210 620,190 650,200"
+                        d="M 180,190 C 220,130 280,90 378,102 C 410,130 440,150 480,170 C 492,210 510,265 510,280 C 530,260 545,245 560,230 C 595,210 620,190 650,200"
                         fill="none"
                         stroke="#b48b78"
                         strokeWidth="1.8"
@@ -362,6 +362,18 @@ export default function GoalPage() {
                       <rect x="520" y="255" width="80" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
                       <text x="560" y="267" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
                         MALDIVES
+                      </text>
+
+                      {/* SEYCHELLES (Indian Ocean, east of Africa) */}
+                      <line x1="510" y1="255" x2="510" y2="273" stroke="#b48b78" strokeWidth="1.2" strokeDasharray="2 2" opacity="0.6" />
+                      <circle cx="510" cy="280" r="4" fill="none" stroke="#b48b78" strokeWidth="1.5" opacity="0.8">
+                        <animate attributeName="r" values="4;12" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="510" cy="280" r="4.5" fill="#b48b78" />
+                      <rect x="465" y="283" width="90" height="18" rx="4" fill="#faf6f0" stroke="#b48b78" strokeWidth="0.8" opacity="0.95" />
+                      <text x="510" y="295" textAnchor="middle" fill="#3d2b1f" style={{ fontFamily: "'Tenor Sans', sans-serif", letterSpacing: '0.12em', fontWeight: 'bold' }} fontSize="9">
+                        SEYCHELLES
                       </text>
 
                       {/* THAILAND */}

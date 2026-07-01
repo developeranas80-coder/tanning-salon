@@ -66,7 +66,7 @@ const BEDS = [
     notes: "High-pressure lay-down tanning system.",
     desc: "Experience deep, long-lasting golden tan in the Thailand suite. Features 50 high-pressure tubes and hyper-focused glass facial reflectors in our classic lay-down design.",
     specs: ["High-Pressure Reflector System", "Intelligent Ventilation", "Smart Touch Screen", "Surround Sound Acoustics"],
-    image: "/thailand_standup.png?v=5",
+    image: "/thailand_standup.png?v=6",
   },
   {
     suite: "Room 6 - Dominican Republic",
